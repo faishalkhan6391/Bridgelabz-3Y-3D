@@ -1,0 +1,80 @@
+:root {
+  --text-dark:#222;
+  --text-light:#fff;
+  --accent:#ff4c60;
+  --font:'Segoe UI',Roboto,Arial,sans-serif;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{scroll-behavior:smooth}
+body{font-family:var(--font);line-height:1.6;color:var(--text-dark)}
+
+header{
+  background:linear-gradient(90deg,#111,#333);
+  color:var(--text-light);
+  padding:1rem 2rem;
+  position:sticky;
+  top:0;
+  z-index:100;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+header h1{font-size:1.6rem;letter-spacing:1px}
+nav a{
+  color:var(--text-light);
+  text-decoration:none;
+  margin-left:1rem;
+  font-weight:500;
+}
+nav a:hover{color:var(--accent)}
+
+main section{
+  min-height:90vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:4rem 8%;
+  color:var(--text-dark);
+}
+
+#intro{
+  background:linear-gradient(135deg,#ff9a9e 0%,#fad0c4 100%);
+  text-align:center;
+}
+#intro h2{font-size:2.5rem;font-weight:700;margin-bottom:1rem}
+#intro p{max-width:700px;margin:0 auto;font-size:1.1rem}
+
+#landmarks{
+  background:url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1950&q=80') center/cover fixed;
+  color:var(--text-light);
+  text-shadow:0 2px 6px rgba(0,0,0,0.5);
+}
+#landmarks h2{font-size:2rem;font-weight:700;margin-bottom:1rem}
+#landmarks p{max-width:600px}
+
+#culture{
+  background:radial-gradient(circle at top left,#ffe1ec,#ffffff);
+}
+#culture h2{font-size:2rem;font-weight:700;color:#b30047;margin-bottom:1rem}
+#culture p{max-width:700px}
+
+#nightlife{
+  background:url('https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=1950&q=80') center/cover fixed;
+  color:var(--text-light);
+  text-shadow:0 2px 6px rgba(0,0,0,0.6);
+}
+#nightlife h2{font-size:2rem;font-weight:700;margin-bottom:1rem}
+#nightlife p{max-width:600px}
+
+footer{
+  background:#111;
+  color:#ccc;
+  text-align:center;
+  padding:1.5rem;
+}
+
+@media(max-width:768px){
+  main section{padding:3rem 6%}
+  #intro h2{font-size:2rem}
+}

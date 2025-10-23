@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Discover Paris</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Discover Paris</h1>
+    <nav>
+      <a href="#intro">Home</a>
+      <a href="#landmarks">Landmarks</a>
+      <a href="#culture">Culture</a>
+      <a href="#nightlife">Nightlife</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="intro">
+      <h2>Welcome to Paris</h2>
+      <p>The City of Light, where art, history, fashion, and gastronomy blend in a timeless atmosphere. Explore the culture, landmarks, and vibrant life of France’s capital.</p>
+    </section>
+
+    <section id="landmarks">
+      <h2>Iconic Landmarks</h2>
+      <p>From the Eiffel Tower and the Louvre Museum to Notre-Dame Cathedral, every street corner tells a story. Paris’ architecture seamlessly merges classic grandeur with modern design.</p>
+    </section>
+
+    <section id="culture">
+      <h2>Culture & Lifestyle</h2>
+      <p>Parisian culture celebrates creativity, conversation, and café life. Whether you’re reading at a corner café or attending an evening ballet at Opéra Garnier, art thrives everywhere.</p>
+    </section>
+
+    <section id="nightlife">
+      <h2>Nightlife in Paris</h2>
+      <p>As the sun sets, the city transforms. Rooftop bars, jazz clubs, and river cruises offer endless possibilities to experience the magic of Paris after dark.</p>
+    </section>
+  </main>
+
+  <footer>© 2025 Discover Paris • All Rights Reserved</footer>
+</body>
+</html>
