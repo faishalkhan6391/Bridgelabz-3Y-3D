@@ -1,0 +1,74 @@
+/* --- General Page Styling --- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header, footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #222;
+    color: white;
+}
+
+/* --- Flexbox Container --- */
+.box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px;
+}
+
+/* --- Base Box Styling --- */
+.box {
+    width: 200px;
+    height: 120px;
+    padding: 20px; /* Demonstrates internal spacing */
+    background-color: white;
+    text-align: center;
+    line-height: 80px;
+    font-weight: bold;
+    border: 3px solid transparent;
+    transition: border-color 0.4s ease;
+}
+
+/* --- Different Border Styles --- */
+.solid {
+    border-style: solid;
+    border-color: #007bff;
+}
+
+.dashed {
+    border-style: dashed;
+    border-color: #28a745;
+}
+
+.double {
+    border-style: double;
+    border-color: #dc3545;
+}
+
+.groove {
+    border-style: groove;
+    border-color: #ff9800;
+}
+
+.rounded {
+    border: 3px solid #9c27b0;
+    border-radius: 20px; /* Rounded Corners */
+}
+
+/* --- Hover Effect --- */
+.box:hover {
+    border-color: #000;
+}
+
+/* --- Footer Styling --- */
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
