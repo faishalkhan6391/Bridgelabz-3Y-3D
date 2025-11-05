@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Combined Responsive Demo — Q7–Q10</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="fade-in">
+
+  <!-- Header / Navigation (Flexbox) -->
+  <header class="site-header">
+    <div class="brand">Responsive Lab</div>
+    <nav class="main-nav">
+      <a href="#terms">Terms</a>
+      <a href="#combined">Combined Demo</a>
+      <a href="#compare">Filter Compare</a>
+      <a href="#principles">Principles</a>
+      <a href="#dashboard">Dashboard</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Terms / Key-Value grid (2-3 columns large, stacked below 700px) -->
+    <section id="terms" class="section container">
+      <h2>Term Cards (Key → Value behavior below 700px)</h2>
+      <p class="muted">Each box shows a term and its description. Grid collapses below 700px into stacked key/value rows.</p>
+
+      <dl class="term-grid">
+        <div class="term-item">
+          <dt>Viewport</dt>
+          <dd>The visible area of a web page on a device — set with &lt;meta viewport&gt;.</dd>
+        </div>
+
+        <div class="term-item">
+          <dt>Media Query</dt>
+          <dd>@media rules that apply CSS based on viewport width, orientation, etc.</dd>
+        </div>
+
+        <div class="term-item">
+          <dt>Flexbox</dt>
+          <dd>One-dimensional layout for distributing space inside a container.</dd>
+        </div>
+
+        <div class="term-item">
+          <dt>Grid</dt>
+          <dd>Two-dimensional layout for rows and columns — powerful for complex layouts.</dd>
+        </div>
+
+        <div class="term-item">
+          <dt>Rem/Em</dt>
+          <dd>Relative units for scalable typography and spacing.</dd>
+        </div>
+
+        <div class="term-item">
+          <dt>Responsive Images</dt>
+          <dd>Use srcset/sizes or CSS max-width:100% to make images fluid.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- Q7: Combined Responsive Web Demo (Grid with 3 sections) -->
+    <section id="combined" class="section container">
+      <h2>Combined Responsive Web Demo</h2>
+      <div class="combined-grid">
+        <!-- Image gallery -->
+        <article class="card gallery">
+          <h3>Image Gallery</h3>
+          <div class="gallery-grid">
+            <img src="https://via.placeholder.com/400x250?text=1" alt="Gallery image 1">
+            <img src="https://via.placeholder.com/400x250?text=2" alt="Gallery image 2">
+            <img src="https://via.placeholder.com/400x250?text=3" alt="Gallery image 3">
+          </div>
+        </article>
+
+        <!-- Text explanation -->
+        <article class="card explanation">
+          <h3>Responsive Design Explained</h3>
+          <p>Responsive design adapts layouts and media to different screen sizes using flexible grids, fluid media, and breakpoints. Key techniques: flexible units (%, rem), CSS Grid/Flexbox, responsive images, and thoughtfully chosen breakpoints.</p>
+          <ul>
+            <li>Use mobile-first media queries.</li>
+            <li>Prefer relative sizing for spacing and fonts.</li>
+            <li>Test breakpoints at real device widths.</li>
+          </ul>
+        </article>
+
+        <!-- Cheat sheet preview -->
+        <aside class="card cheat-sheet">
+          <h3>Cheat Sheet</h3>
+          <pre><code>/* Mobile first */
+.container { padding: 1rem; }
+@media (min-width:700px) { .combined-grid { grid-template-columns: 1.2fr 1fr; } }
+</code></pre>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Q8: Filter Comparison Layout -->
+    <section id="compare" class="section container">
+      <h2>Filter Comparison (Before &amp; After)</h2>
+      <p class="muted">Right image has a CSS filter applied. Hover to reveal original smoothly.</p>
+
+      <div class="compare">
+        <figure class="compare-item">
+          <img src="https://via.placeholder.com/600x350?text=Before" alt="Before image">
+          <figcaption>Before</figcaption>
+        </figure>
+
+        <figure class="compare-item filtered">
+          <img src="https://via.placeholder.com/600x350?text=After" alt="After image with filter">
+          <figcaption>After (filtered)</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Q9: Responsive Design Principles Summary (Grid of 3 boxes) -->
+    <section id="principles" class="section container">
+      <h2>Responsive Design Principles</h2>
+      <div class="principles-grid">
+        <div class="principle card">
+          <h3>Fluid Layouts</h3>
+          <p>Layouts that use relative widths so content flows across viewports.</p>
+          <pre><code>.col { width: 100%; max-width: 600px; }</code></pre>
+        </div>
+
+        <div class="principle card">
+          <h3>Flexible Media</h3>
+          <p>Images and video scale: max-width:100%; height:auto;</p>
+          <pre><code>img { max-width:100%; height:auto; }</code></pre>
+        </div>
+
+        <div class="principle card">
+          <h3>Breakpoints</h3>
+          <p>Strategically chosen widths to change layout patterns.</p>
+          <pre><code>@media (min-width:700px) { /* layout */ }</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Q10: Responsive Dashboard Summary -->
+    <section id="dashboard" class="section container">
+      <h2>Responsive Dashboard Summary</h2>
+
+      <div class="dashboard-grid">
+        <header class="dash-header">
+          <h3>Dashboard</h3>
+        </header>
+
+        <aside class="dash-sidebar">
+          <nav>
+            <a href="#">Overview</a>
+            <a href="#">Filters</a>
+            <a href="#">Media</a>
+            <a href="#">Cheat Sheet</a>
+          </nav>
+        </aside>
+
+        <section class="dash-main">
+          <div class="cards">
+            <div class="dash-card">Filters</div>
+            <div class="dash-card">Typography</div>
+            <div class="dash-card">Media Queries</div>
+            <div class="dash-card">Cheat Sheet Links</div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div>Contact: <a href="mailto:hello@example.com">hello@example.com</a></div>
+    <div class="muted">© Responsive Lab</div>
+  </footer>
+
+</body>
+</html>
