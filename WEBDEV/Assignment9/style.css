@@ -1,0 +1,129 @@
+/* === General Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f7f9fc;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === Header === */
+header {
+  background-color: #4a6cf7;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+/* === Dashboard Layout using Grid === */
+.dashboard {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  flex-grow: 1;
+  min-height: 80vh;
+}
+
+/* === Sidebar === */
+.sidebar {
+  background-color: #2d3e64;
+  color: white;
+  padding: 1rem;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  margin: 1rem 0;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.sidebar a:hover {
+  color: #ffcc70;
+}
+
+/* === Main Content === */
+.main-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+/* === Cards === */
+.card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.card h2 {
+  color: #4a6cf7;
+  margin-bottom: 0.5rem;
+}
+
+/* === Footer === */
+footer {
+  background-color: #4a6cf7;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* === Animation === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Responsive Layouts === */
+@media (max-width: 750px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    grid-row: 1;
+    text-align: center;
+  }
+
+  .sidebar ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .sidebar li {
+    margin: 0.5rem 1rem;
+  }
+}

@@ -1,0 +1,12 @@
+/* Q1 — Optional Custom Styles */
+
+/* Adds gentle gradient behind hero section */
+main {
+  background: linear-gradient(to bottom right, #f0f8ff, #ffffff);
+}
+
+/* Button hover effect */
+.btn-primary:hover {
+  background-color: #004b9b;
+  transition: 0.3s ease;
+}
