@@ -73,7 +73,7 @@ A one-dimensional layout model designed to align and distribute elements efficie
 ## 🎓 Mentorship
 This repository was created under the guidance of the **BridgeLabz Mentorship Team**:
 
-- **Sahil Kumar B**  
+- **Sahil Kumar **  
 - **Deepak Prasad**
 
 ---
