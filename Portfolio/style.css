@@ -1,0 +1,32 @@
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('https://source.unsplash.com/1600x900/?developer,code') no-repeat center center/cover;
+}
+
+/* Skills Section Background */
+#skills {
+  background: linear-gradient(135deg, #0d6efd, #6610f2);
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navbar styling */
+.navbar-brand {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+/* Buttons hover */
+.btn-warning:hover {
+  background-color: #e0a800;
+}
+
+/* Footer */
+footer {
+  font-size: 0.9rem;
+}
