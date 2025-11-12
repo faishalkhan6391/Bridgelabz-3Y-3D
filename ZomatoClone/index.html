@@ -1,0 +1,293 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zomato Clone — Static</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-top container">
+      <div class="brand">
+        <h1>zomato</h1>
+      </div>
+
+      <div class="search-area">
+        <div class="location">
+          <span class="pin">📍</span>
+          <div class="loc-text">
+            <div class="loc-line-1">Ywca, Ashoka Rd, Hanum</div>
+            <div class="loc-line-2">Change</div>
+          </div>
+          <span class="chev">▾</span>
+        </div>
+
+        <div class="searchbox">
+          <input type="text" placeholder="Search for restaurant, cuisine or a dish" />
+        </div>
+      </div>
+
+      <nav class="auth">
+        <a href="#" class="auth-link">Log in</a>
+        <a href="#" class="auth-link secondary">Sign up</a>
+      </nav>
+    </div>
+
+    <div class="tabs container">
+      <div class="tab active">
+        <div class="tab-icon">🍽️</div>
+        <div class="tab-text">Dining Out</div>
+      </div>
+      <div class="tab">
+        <div class="tab-icon">🛵</div>
+        <div class="tab-text">Delivery</div>
+      </div>
+      <div class="tab">
+        <div class="tab-icon">🍸</div>
+        <div class="tab-text">Nightlife</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Collections -->
+    <section class="collections container">
+      <h2>Collections</h2>
+      <p class="sub">Explore curated lists of top restaurants, cafes, pubs, and bars in Delhi NCR, based on trends</p>
+
+      <div class="collections-row">
+        <article class="collection-card">
+          <img src="https://source.unsplash.com/800x600/?restaurant,interior" alt="">
+          <div class="col-caption">
+            <h3>Insta-worthy spots</h3>
+            <span>37 Places ▸</span>
+          </div>
+        </article>
+
+        <article class="collection-card">
+          <img src="https://source.unsplash.com/800x600/?dining,restaurant" alt="">
+          <div class="col-caption">
+            <h3>Top trending spots</h3>
+            <span>29 Places ▸</span>
+          </div>
+        </article>
+
+        <article class="collection-card">
+          <img src="https://source.unsplash.com/800x600/?cafe,outdoor" alt="">
+          <div class="col-caption">
+            <h3>New in town</h3>
+            <span>14 Places ▸</span>
+          </div>
+        </article>
+
+        <article class="collection-card">
+          <img src="https://source.unsplash.com/800x600/?bar,cocktail" alt="">
+          <div class="col-caption">
+            <h3>Omakase bars</h3>
+            <span>7 Places ▸</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Filter Pills -->
+    <section class="filters container">
+      <div class="pills">
+        <button class="pill">⚙ Filters</button>
+        <button class="pill">Offers</button>
+        <button class="pill">Rating: 4.5+</button>
+        <button class="pill">Pet friendly</button>
+        <button class="pill">Outdoor seating</button>
+        <button class="pill">Serves Alcohol</button>
+        <button class="pill">Open Now</button>
+      </div>
+    </section>
+
+    <!-- Promo banner -->
+    <section class="promo container">
+      <div class="promo-card">
+        <div class="promo-left">
+          <h3>Get up to</h3>
+          <h1>50% <span class="off">OFF</span></h1>
+          <p>on your dining bills with Zomato</p>
+          <a class="cta" href="#">Check out all the restaurants</a>
+        </div>
+        <div class="promo-right">
+          <img src="https://source.unsplash.com/1200x600/?food,table" alt="promo">
+        </div>
+      </div>
+    </section>
+
+    <!-- Restaurant list heading -->
+    <section class="list-heading container">
+      <h2>Best Food in Delhi NCR</h2>
+    </section>
+
+    <!-- Restaurants grid -->
+    <section class="restaurants container">
+      <!-- Example of many cards; duplicate or edit as needed -->
+      <div class="restaurant-grid">
+        <!-- Restaurant card -->
+        <article class="rest-card">
+          <div class="media">
+            <img src="https://source.unsplash.com/600x420/?restaurant,indian" alt="">
+            <div class="promo-ribbon">Flat 10% OFF</div>
+            <div class="promoted">Promoted</div>
+          </div>
+
+          <div class="rest-body">
+            <div class="rest-title-row">
+              <h3 class="rest-title">Cedar Club House</h3>
+              <div class="rating">4.5★</div>
+            </div>
+
+            <p class="cuisines">Asian, Italian, Seafood, Th...</p>
+            <div class="meta-row">
+              <div class="price">₹2,200 for two</div>
+              <div class="distance">993 m</div>
+            </div>
+
+            <div class="address">Connaught Place, New Delhi</div>
+            <div class="opens">Opens at 11:45am</div>
+          </div>
+        </article>
+
+        <!-- Copy the card with different images & text -->
+        <article class="rest-card">
+          <div class="media">
+            <img src="https://source.unsplash.com/600x420/?restaurant,bar" alt="">
+            <div class="promo-ribbon">Flat 10% OFF</div>
+            <div class="promoted">Promoted</div>
+          </div>
+
+          <div class="rest-body">
+            <div class="rest-title-row">
+              <h3 class="rest-title">Local</h3>
+              <div class="rating">4.2★</div>
+            </div>
+
+            <p class="cuisines">North Indian, Continental, ...</p>
+            <div class="meta-row">
+              <div class="price">₹2,600 for two</div>
+              <div class="distance">1.2 km</div>
+            </div>
+
+            <div class="address">Connaught Place, New Delhi</div>
+            <div class="opens">Opens at 11am</div>
+          </div>
+        </article>
+
+        <article class="rest-card">
+          <div class="media">
+            <img src="https://source.unsplash.com/600x420/?cafe,interior" alt="">
+            <div class="promo-ribbon">Flat 10% OFF</div>
+            <div class="promoted">Promoted</div>
+          </div>
+
+          <div class="rest-body">
+            <div class="rest-title-row">
+              <h3 class="rest-title">Ivoryy Fusion Bar</h3>
+              <div class="rating">4.4★</div>
+            </div>
+
+            <p class="cuisines">Continental, Asian, Moder...</p>
+            <div class="meta-row">
+              <div class="price">₹3,500 for two</div>
+              <div class="distance">1.1 km</div>
+            </div>
+
+            <div class="address">Connaught Place, New Delhi</div>
+            <div class="opens">Opens at 12noon</div>
+          </div>
+        </article>
+
+        <!-- more cards (repeat rows for the look) -->
+        <article class="rest-card">
+          <div class="media">
+            <img src="https://source.unsplash.com/600x420/?restaurant,cozy" alt="">
+            <div class="promo-ribbon">Flat 15% OFF</div>
+            <div class="promoted">Promoted</div>
+          </div>
+
+          <div class="rest-body">
+            <div class="rest-title-row">
+              <h3 class="rest-title">38 Barracks</h3>
+              <div class="rating">4.5★</div>
+            </div>
+
+            <p class="cuisines">North Indian, Biryani, Chin...</p>
+            <div class="meta-row">
+              <div class="price">₹2,000 for two</div>
+              <div class="distance">1.5 km</div>
+            </div>
+
+            <div class="address">Connaught Place, New Delhi</div>
+            <div class="opens">Opens at 12noon</div>
+          </div>
+        </article>
+
+        <article class="rest-card">
+          <div class="media">
+            <img src="https://source.unsplash.com/600x420/?restaurant,modern" alt="">
+            <div class="promo-ribbon">Flat 20% OFF</div>
+            <div class="promoted">Promoted</div>
+          </div>
+
+          <div class="rest-body">
+            <div class="rest-title-row">
+              <h3 class="rest-title">Tamasha</h3>
+              <div class="rating">4.2★</div>
+            </div>
+
+            <p class="cuisines">North Indian, Asian, Mughl...</p>
+            <div class="meta-row">
+              <div class="price">₹2,500 for two</div>
+              <div class="distance">1.2 km</div>
+            </div>
+
+            <div class="address">Connaught Place, New Delhi</div>
+            <div class="opens">Opens at 11:30am</div>
+          </div>
+        </article>
+
+        <article class="rest-card">
+          <div class="media">
+            <img src="https://source.unsplash.com/600x420/?outdoor,dining" alt="">
+            <div class="promo-ribbon">Flat 20% OFF</div>
+            <div class="promoted">Promoted</div>
+          </div>
+
+          <div class="rest-body">
+            <div class="rest-title-row">
+              <h3 class="rest-title">Chido</h3>
+              <div class="rating">4.1★</div>
+            </div>
+
+            <p class="cuisines">Chinese, Italian, Asian, Piz...</p>
+            <div class="meta-row">
+              <div class="price">₹2,500 for two</div>
+              <div class="distance">1.4 km</div>
+            </div>
+
+            <div class="address">Connaught Place, New Delhi</div>
+            <div class="opens">Opens at 12noon</div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Zomato Clone — static demo</p>
+    </div>
+  </footer>
+</body>
+</html>
