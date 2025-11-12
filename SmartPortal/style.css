@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    height: 800px;
+    width: 1200px;
+    margin: auto;
+    margin: 20px auto;
+}
+.heading{
+    text-align: center;
+    padding-top: 70px;
+    font-size: 40px;
+    color: white;
+}
+.head{
+    border: 2px solid black;
+    height: 200px;
+    background-color: blue;
+}
+.links{
+    border: 2px solid black;
+    padding: 10px;
+    text-align: center;
+    background-color: aqua;
+}
+.float{
+    border: 2px solid black;
+    padding: 10px;
+    background-color: darkblue;
+    color: white;
+    font-family: cursive;
+}
+.main{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+.hero{
+    border: 2px solid black;
+    height: 400px;
+    padding: 10px;
+}
+.credits{
+    border: 2px solid black;
+    height: 400px;
+    padding: 10px;
+}
+.hero-heading{
+    margin: 20px 0px;
+    font-size: 22px;
+}
+.image{
+    border: 2px solid black;
+    height: 20px;
+}
+.inside-hero{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    margin: 10px 0px;
+}
+.team-heading{
+    text-align: center;
+    margin: 20px 0px;
+    font-size: 22px;
+}
+.team{
+    text-align: center;
+    padding: 20px;
+}
+.footer{
+    border: 2px solid black;
+    height: 50px;
+    background-color: blue;
+    text-align: center;
+    color: white;
+    padding: 10px;
+}
+.scroll{
+    text-align: center;
+    height: 290px;
+}
+.member{
+    margin-bottom: 25px;
+}
