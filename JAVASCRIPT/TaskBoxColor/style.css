@@ -1,0 +1,44 @@
+
+.box{
+    height: 300px;
+    width: 300px;
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+
+.btn1{
+    background-color: green;
+}
+
+.btn2{
+    background-color: red;
+}
+
+.btn3{
+    background-color: pink;
+}
+
+.btn4{
+    background-color: yellow;
+}
+
+.bggreen{
+    background-color: green;
+
+}
+
+.bgred{
+    background-color: red;
+
+}
+
+
+.bgpink{
+    background-color: pink;
+
+}
+
+.bgyellow{
+    background-color:yellow;
+
+}
