@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment – Single File</title>
+</head>
+<body>
+<h2>Assignment (All Questions). Open Console (F12)</h2>
+
+<script>
+/* -----------------------------------------------------------
+   Q1. Student Result Processing (reduce + Classes)
+------------------------------------------------------------*/
+class Student {
+    constructor(name, marks) {
+        this.name = name;
+        this.marks = marks;
+    }
+
+    calculateAverage() {
+        return this.marks.reduce((a, b) => a + b, 0) / this.marks.length;
+    }
+
+    getGrade() {
+        let avg = this.calculateAverage();
+
+        if (avg >= 90) return "A";
+        if (avg >= 75) return "B";
+        if (avg >= 50) return "C";
+        return "F";
+    }
+}
+
+console.log("----- Q1 Output -----");
+const st1 = new Student("Anam", [90, 85, 92]);
+const st2 = new Student("Rahul", [70, 60, 75]);
+const st3 = new Student("Sneha", [40, 55, 45]);
+
+console.log(st1.name, st1.calculateAverage(), st1.getGrade());
+console.log(st2.name, st2.calculateAverage(), st2.getGrade());
+console.log(st3.name, st3.calculateAverage(), st3.getGrade());
+
+
+
+/* -----------------------------------------------------------
+   Q2. Online Food Ordering (map + Error Handling)
+------------------------------------------------------------*/
+console.log("----- Q2 Output -----");
+
+const menu = {
+    pizza: 200,
+    burger: 120,
+    pasta: 150,
+    fries: 80
+};
+
+function calculateBill(orderItems) {
+    try {
+        const prices = orderItems.map(item => {
+            if (!menu[item]) throw new Error(`Item not found: ${item}`);
+            return menu[item];
+        });
+
+        const total = prices.reduce((a, b) => a + b, 0);
+        console.log("Total Bill:", total);
+
+    } catch (err) {
+        console.log("Error:", err.message);
+    }
+}
+
+calculateBill(["pizza", "fries"]);
+calculateBill(["burger", "icecream"]); // invalid item
+
+
+
+/* -----------------------------------------------------------
+   Q3. Product Discount System (Prototype)
+------------------------------------------------------------*/
+console.log("----- Q3 Output -----");
+
+function Product(name, price) {
+    this.name = name;
+    this.price = price;
+}
+
+Product.prototype.applyDiscount = function (percent) {
+    return this.price - (this.price * percent / 100);
+};
+
+const p1 = new Product("Shoes", 2000);
+const p2 = new Product("Bag", 1500);
+const p3 = new Product("Watch", 3000);
+
+console.log("Shoes new price:", p1.applyDiscount(10));
+console.log("Bag new price:", p2.applyDiscount(20));
+console.log("Watch new price:", p3.applyDiscount(15));
+
+
+
+/* -----------------------------------------------------------
+   Q4. Employee Inheritance + Runtime Polymorphism
+------------------------------------------------------------*/
+console.log("----- Q4 Output -----");
+
+class Employee {
+    constructor(name, dept) {
+        this.name = name;
+        this.department = dept;
+    }
+    work() {
+        console.log(`${this.name} works in ${this.department}`);
+    }
+}
+
+class Manager extends Employee {
+    work() {
+        console.log(`${this.name} manages the ${this.department} team.`);
+    }
+}
+
+let e1 = new Employee("Anam", "IT");
+let m1 = new Manager("Rahul", "Engineering");
+
+e1.work();
+m1.work(); // polymorphism: method overridden
+
+
+
+/* -----------------------------------------------------------
+   Q5. Ride-Sharing App
+------------------------------------------------------------*/
+console.log("----- Q5 Output -----");
+
+class User {
+    constructor(name, rating) {
+        this.name = name;
+        this.rating = rating;
+    }
+}
+
+class Driver extends User {
+    constructor(name, rating, vehicle) {
+        super(name, rating);
+        this.vehicle = vehicle;
+    }
+}
+
+class Trip {
+    constructor(from, to, distance) {
+        this.from = from;
+        this.to = to;
+        this.distance = distance;
+    }
+
+    calculateFare() {
+        if (this.distance <= 0 || isNaN(this.distance)) {
+            throw new Error("Invalid distance!");
+        }
+        return this.distance * 10;
+    }
+}
+
+try {
+    const trip = new Trip("Delhi", "Noida", 15);
+    console.log("Fare:", trip.calculateFare());
+} catch (e) {
+    console.log("Trip Error:", e.message);
+}
+
+
+
+try {
+    const trip2 = new Trip("A", "B", -5);
+    console.log(trip2.calculateFare());
+} catch (e) {
+    console.log("Trip Error:", e.message);
+}
+
+
+
+/* -----------------------------------------------------------
+   Q6. E-Commerce Inventory System
+------------------------------------------------------------*/
+console.log("----- Q6 Output -----");
+
+const products = [
+    { id: 1, name: "Laptop", category: "Electronics", price: 50000, stock: 3 },
+    { id: 2, name: "Shoes", category: "Fashion", price: 2000, stock: 15 },
+    { id: 3, name: "Phone", category: "Electronics", price: 30000, stock: 2 },
+    { id: 4, name: "T-shirt", category: "Fashion", price: 500, stock: 30 }
+];
+
+function getLowStockProducts() {
+    return products.filter(p => p.stock < 5);
+}
+
+function sortProductsByPrice() {
+    return products.sort((a, b) => a.price - b.price);
+}
+
+function calculateTotalInventoryValue() {
+    return products.reduce((acc, p) => acc + (p.price * p.stock), 0);
+}
+
+function groupByCategory() {
+    return products.reduce((group, item) => {
+        if (!group[item.category]) group[item.category] = [];
+        group[item.category].push(item);
+        return group;
+    }, {});
+}
+
+console.log("Low Stock:", getLowStockProducts());
+console.log("Sorted by Price:", sortProductsByPrice());
+console.log("Total Inventory Value:", calculateTotalInventoryValue());
+console.log("Group by Category:", groupByCategory());
+
+
+
+/* -----------------------------------------------------------
+   Q7. Banking Application (Private Fields)
+------------------------------------------------------------*/
+console.log("----- Q7 Output -----");
+
+class BankAccount {
+    #balance = 0;
+
+    deposit(amount) {
+        this.#balance += amount;
+        console.log(`Deposited: ${amount}`);
+    }
+
+    withdraw(amount) {
+        if (amount > this.#balance) {
+            throw new Error("Insufficient balance");
+        }
+        this.#balance -= amount;
+        console.log(`Withdrawn: ${amount}`);
+    }
+
+    getBalance() {
+        return this.#balance;
+    }
+}
+
+const acc = new BankAccount();
+acc.deposit(500);
+
+try {
+    acc.withdraw(200);
+    acc.withdraw(400);
+} catch (e) {
+    console.log("Bank Error:", e.message);
+}
+
+console.log("Final Balance:", acc.getBalance());
+
+
+
+/* -----------------------------------------------------------
+   Q8. Movie Ticket Booking System
+------------------------------------------------------------*/
+console.log("----- Q8 Output -----");
+
+class MovieTicket {
+    constructor(movie, seat, price) {
+        this.movieName = movie;
+        this.seatNo = seat;
+        this.price = price;
+    }
+}
+
+MovieTicket.prototype.printTicket = function () {
+    console.log(`Movie: ${this.movieName}, Seat: ${this.seatNo}, Price: ${this.price}`);
+};
+
+class OnlineTicket extends MovieTicket {
+    constructor(movie, seat, price, fee) {
+        super(movie, seat, price);
+        this.convenienceFee = fee;
+    }
+
+    getTotalAmount() {
+        return this.price + this.convenienceFee;
+    }
+}
+
+const t1 = new OnlineTicket("Avengers", "B12", 300, 50);
+t1.printTicket(); // accessing parent prototype
+console.log("Total Amount:", t1.getTotalAmount());
+
+
+
+/* -----------------------------------------------------------
+   Q9. Fitness App Analytics
+------------------------------------------------------------*/
+console.log("----- Q9 Output -----");
+
+class FitnessAnalytics {
+    constructor(data) {
+        if (data.length === 0) {
+            throw new Error("Dataset is empty");
+        }
+        this.data = data;
+    }
+
+    getActiveUsers() {
+        return this.data.filter(u => u.steps > 7000);
+    }
+
+    getAverageCalories() {
+        return this.data.reduce((a, b) => a + b.calories, 0) / this.data.length;
+    }
+
+    getUserSummary() {
+        return this.data.map(u => `${u.user} burned ${u.calories} calories`);
+    }
+}
+
+const fitnessData = [
+    { user: "A", steps: 8000, calories: 300 },
+    { user: "B", steps: 12000, calories: 500 },
+    { user: "C", steps: 4000, calories: 200 }
+];
+
+const analytics = new FitnessAnalytics(fitnessData);
+
+console.log("Active Users:", analytics.getActiveUsers());
+console.log("Avg Calories:", analytics.getAverageCalories());
+console.log("User Summary:", analytics.getUserSummary());
+</script>
+
+</body>
+</html>
