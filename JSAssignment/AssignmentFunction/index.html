@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 5</title>
+</head>
+
+<body>
+<h1>ASSIGNMENT 5 – All Answers in One File</h1>
+
+<hr>
+<h2>Open Console to See Outputs</h2>
+<p>Press F12 → Console</p>
+<hr>
+
+
+<!-- --------------------------------------------------------- -->
+<!-- Q1 : Callback Function -->
+<!-- --------------------------------------------------------- -->
+<script>
+// Q1 : greetUser(name, callback)
+
+function greetUser(name, callback) {
+    console.log(`Q1 Output: Hello ${name}`);
+    callback();
+}
+
+function showEndMessage() {
+    console.log("Welcome to the course!");
+}
+
+greetUser("Anam", showEndMessage);
+</script>
+
+
+
+<!-- --------------------------------------------------------- -->
+<!-- Q2 : Higher Order Function applyOperation -->
+<!-- --------------------------------------------------------- -->
+<script>
+function applyOperation(numbers, operation) {
+    return numbers.map(operation);
+}
+
+const nums = [1,2,3,4];
+
+console.log("Q2 Doubled:", applyOperation(nums, n => n * 2));
+console.log("Q2 Squared:", applyOperation(nums, n => n * n));
+</script>
+
+
+
+<!-- --------------------------------------------------------- -->
+<!-- Q3 : Arrow Function 'this' Problem -->
+<!-- --------------------------------------------------------- -->
+<script>
+console.log("Q3 Output Below:");
+
+const user = {
+    name: "Rahul",
+    showName: () => {
+        console.log(this.name); // undefined – arrow functions don't bind "this"
+    }
+};
+
+user.showName();
+
+const userFixed = {
+    name: "Rahul",
+    showName() {
+        console.log(this.name); // works correctly
+    }
+};
+
+userFixed.showName();
+</script>
+
+
+
+<!-- --------------------------------------------------------- -->
+<!-- Q4 : Constructor + Prototype Method -->
+<!-- --------------------------------------------------------- -->
+<script>
+function Car(brand, model) {
+    this.brand = brand;
+    this.model = model;
+}
+
+Car.prototype.getDetails = function () {
+    console.log(`Q4 Car → ${this.brand} ${this.model}`);
+};
+
+const c1 = new Car("Toyota", "Fortuner");
+const c2 = new Car("Honda", "City");
+
+c1.getDetails();
+c2.getDetails();
+</script>
+
+
+
+<!-- --------------------------------------------------------- -->
+<!-- Q5 : Person → Student (Prototype Inheritance) -->
+<!-- --------------------------------------------------------- -->
+<script>
+function Person(name) {
+    this.name = name;
+}
+
+Person.prototype.showName = function () {
+    console.log("Q5 Name:", this.name);
+};
+
+function Student(name, branch) {
+    Person.call(this, name);
+    this.branch = branch;
+}
+
+Student.prototype = Object.create(Person.prototype);
+Student.prototype.constructor = Student;
+
+Student.prototype.showBranch = function () {
+    console.log("Branch:", this.branch);
+};
+
+const s1 = new Student("Anam", "CSE");
+s1.showName();
+s1.showBranch();
+</script>
+
+
+
+<!-- --------------------------------------------------------- -->
+<!-- Q6 : Prototype Chain (Person → Faculty → Professor) -->
+<!-- --------------------------------------------------------- -->
+<script>
+function Person2(name) {
+    this.name = name;
+}
+Person2.prototype.showName = function () {
+    console.log("Q6 Name:", this.name);
+};
+
+function Faculty(name, department) {
+    Person2.call(this, name);
+    this.department = department;
+}
+Faculty.prototype = Object.create(Person2.prototype);
+Faculty.prototype.constructor = Faculty;
+Faculty.prototype.showDepartment = function () {
+    console.log("Department:", this.department);
+};
+
+function Professor(name, department, subject) {
+    Faculty.call(this, name, department);
+    this.subject = subject;
+}
+Professor.prototype = Object.create(Faculty.prototype);
+Professor.prototype.constructor = Professor;
+Professor.prototype.showSubject = function () {
+    console.log("Subject:", this.subject);
+};
+
+const prof = new Professor("Dr. Mehta", "Engineering", "Physics");
+prof.showName();
+prof.showDepartment();
+prof.showSubject();
+</script>
+
+
+
+<!-- --------------------------------------------------------- -->
+<!-- Q7 : Closures - makeMultiplier() -->
+<!-- --------------------------------------------------------- -->
+<script>
+function makeMultiplier(multiplier) {
+    return function (num) {
+        return num * multiplier; // closure uses multiplier
+    };
+}
+
+const triple = makeMultiplier(3);
+console.log("Q7 Output:", triple(5)); // 15
+</script>
+
+
+
+<!-- --------------------------------------------------------- -->
+<!-- Q8 : Custom Array Prototype myMap() -->
+<!-- --------------------------------------------------------- -->
+<script>
+Array.prototype.myMap = function (callback) {
+    let result = [];
+    for (let i = 0; i < this.length; i++) {
+        result.push(callback(this[i], i, this));
+    }
+    return result;
+};
+
+console.log("Q8 myMap Output:", [1,2,3].myMap(n => n * 2));
+</script>
+
+
+
+<!-- --------------------------------------------------------- -->
+<!-- Q9 : ES6 Class Inheritance -->
+<!-- --------------------------------------------------------- -->
+<script>
+class Person3 {
+    constructor(name) {
+        this.name = name;
+    }
+    showName() {
+        console.log("Q9 Name:", this.name);
+    }
+}
+
+class Student3 extends Person3 {
+    constructor(name, branch) {
+        super(name);
+        this.branch = branch;
+    }
+    showBranch() {
+        console.log("Branch:", this.branch);
+    }
+}
+
+const s2 = new Student3("Rahul", "IT");
+s2.showName();
+s2.showBranch();
+</script>
+
+</body>
+</html>
