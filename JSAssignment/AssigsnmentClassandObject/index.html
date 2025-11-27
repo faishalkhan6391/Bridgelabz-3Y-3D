@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assignment 4 - All Questions</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      line-height: 1.5;
+    }
+    section {
+      margin-bottom: 30px;
+      padding: 20px;
+      border: 2px solid #000;
+      border-radius: 10px;
+    }
+    input, button {
+      padding: 8px;
+      margin: 5px 0;
+    }
+    .error { color: red; font-size: 14px; }
+    .success { color: green; font-size: 14px; }
+    .red-border { border: 2px solid red; }
+    .green-border { border: 2px solid green; }
+  </style>
+</head>
+
+<body>
+
+  <h1>Assignment 4 — All Questions</h1>
+
+  <!-- Q2 Student Form -->
+  <section>
+    <h2>Q2: Student Form Validator</h2>
+    <form id="studentForm">
+      <input type="text" id="studentName" placeholder="Name"><br>
+      <small id="nameError" class="error"></small><br>
+
+      <input type="text" id="studentEmail" placeholder="Email"><br>
+      <small id="emailError" class="error"></small><br>
+
+      <input type="text" id="studentPhone" placeholder="Phone"><br>
+      <small id="phoneError" class="error"></small><br>
+
+      <input type="password" id="studentPassword" placeholder="Password"><br>
+      <small id="passError" class="error"></small><br>
+
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <!-- Q4 Form Builder -->
+  <section>
+    <h2>Q4: Dynamic Form Builder</h2>
+    <div id="formArea"></div>
+    <div id="formResult"></div>
+  </section>
+
+  <!-- Q5 Movie Ticket -->
+  <section>
+    <h2>Q5: Movie Ticket Booking</h2>
+    <form id="movieForm">
+      <input type="text" id="mname" placeholder="Name"><br>
+      <input type="text" id="memail" placeholder="Email"><br>
+      <input type="number" id="mseats" placeholder="Seats (1-10)"><br>
+      <button type="submit">Book Ticket</button>
+    </form>
+    <p id="ticketOutput"></p>
+  </section>
+
+  <!-- Q7 Login -->
+  <section>
+    <h2>Q7: Login Validation</h2>
+    <form id="loginForm">
+      <input type="text" id="loginUser" placeholder="Username"><br>
+      <input type="password" id="loginPass" placeholder="Password"><br>
+      <button type="submit">Login</button>
+    </form>
+    <p id="loginMessage"></p>
+  </section>
+
+  <!-- Q8 Object Updater -->
+  <section>
+    <h2>Q8: Dynamic Object Updater</h2>
+    <form id="userForm">
+      <input type="text" id="uname"><br>
+      <input type="email" id="uemail"><br>
+      <input type="number" id="uage"><br>
+      <button type="submit">Update</button>
+    </form>
+    <pre id="userOutput"></pre>
+  </section>
+
+  <!-- Q9 Shopping Cart -->
+  <section>
+    <h2>Q9: Shopping Cart with Coupon</h2>
+    <button onclick="addItem()">Add Item</button>
+    <button onclick="calculateTotal()">Calculate Total</button>
+
+    <br><br>
+    Coupon: <input type="text" id="coupon"><br>
+    <p id="cartOutput"></p>
+  </section>
+
+  <!-- JS FILE LINKS -->
+  <script src="q1.js"></script>
+  <script src="q2.js"></script>
+  <script src="q3.js"></script>
+  <script src="q4.js"></script>
+  <script src="q5.js"></script>
+  <script src="q6.js"></script>
+  <script src="q7.js"></script>
+  <script src="q8.js"></script>
+  <script src="q9.js"></script>
+
+</body>
+</html>
